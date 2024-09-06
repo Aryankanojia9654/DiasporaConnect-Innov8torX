@@ -1,5 +1,8 @@
 # DiasporaConnect - Innov8torX
 
+* **GitHub Pages Link:** [https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/](https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/)
+
+
 **Connect India Post: BandhanBox** 
 
 A platform connecting the Indian diaspora with authentic Rakhis and handicrafts from India.
@@ -26,7 +29,6 @@ BandhanBox, by Connect India Post, is an e-commerce platform designed to bridge 
 
 **Project Status:**
 
-* **GitHub Pages Link:** [https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/](https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/)
 
 **Technologies Used:**
 
