@@ -12,7 +12,7 @@ A platform connecting the Indian diaspora with authentic Rakhis and handicrafts 
 * Akshay Tiwari (2K22/EC/26)
 * Arindam Singh (2K22/EC/49)
 * Aryan Kanojia (2K22/EC/56)
-* Prabhat Kushwaha (2K22/EC/166)
+* Prabhat Kumar (2K22/EC/166)
 * Rahul (2K22/EC/179)
 * Yashi Jha (23/EP/138)
 
