@@ -60,16 +60,30 @@ Our application aims to address these challenges by:
 
 **Technologies Used:**
 
-* (List the programming languages, frameworks, libraries, etc.)
+* **Frontend:**
+    * HTML5: Structure and content of web pages
+    * CSS3: Styling and visual presentation 
+    * JavaScript (ES6+): Interactive elements and dynamic functionality
+    * React: Component-based UI library for building user interfaces
+    * Redux: State management for predictable data flow in React applications
 
-**Installation and Setup:**
+* **Backend:**
+    * Node.js: JavaScript runtime environment for server-side development
+    * Express.js: Web application framework for Node.js, simplifying API development and routing
+    
+* **AI/ML:**
+    * PyTorch: Open-source machine learning framework for building and training neural networks
+    * TensorFlow: Another popular open-source machine learning framework 
 
-* (Provide instructions, if applicable) 
+* **Blockchain:**
+    * SHA256: Hash function for secure data integrity verification
+    * Ethereum: Blockchain platform for decentralized applications and smart contracts
+    * Bitcoin: The first and most widely used cryptocurrency
 
-**Contributing:**
+* **Database:**
+    * SQL: Structured Query Language for managing and interacting with relational databases
+    * Firebase: Backend-as-a-Service platform for real-time databases, authentication, and more
 
-* (Explain how others can contribute, if applicable)
-
-**License:**
-
-* (Specify the license)
+* **Development Tools:**
+    * VS Code: Popular code editor with extensive extensions and support
+    * Linux: Operating system providing a stable and customizable development environment
