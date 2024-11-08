@@ -63,3 +63,5 @@ Outline of how customer feedback is integrated into the project:
 ---
 
 By following these Agile communication practices, the team can maintain clear, effective, and collaborative communication throughout the [Project Name] project.
+
+---
