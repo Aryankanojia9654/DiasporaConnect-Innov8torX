@@ -15,6 +15,14 @@ A platform connecting the Indian diaspora with authentic Rakhis and handicrafts 
 * Rahul (2K22/EC/179)
 * Yashi Jha (23/EP/138)
 
+**EMAIL IDs-**
+
+1. arindam0singh@gmail.com 
+2. yashijha12@gmail.com
+3. tiwariakshay590@gmail.com
+4. pg1452502@gmail.com
+5. Kushwahaprabhat30@gmail.com
+
 **Project Description:**
 
 Diaspora-Connect, is an e-commerce platform designed to bridge the gap between the Indian diaspora and their cultural roots. We offer a curated selection of authentic Rakhis and handicrafts, sourced directly from artisans across India. Our platform leverages the reliability and reach of India Post to ensure timely and secure delivery to customers worldwide. 
