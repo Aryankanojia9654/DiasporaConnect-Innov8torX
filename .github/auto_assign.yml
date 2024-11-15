@@ -1,19 +1,30 @@
-# Set to true to add reviewers to pull requests
-addReviewers: true
+module.exports = (app) => {
+  app.on('issue_comment.created', async (context) => {
+    const commentBody = context.payload.comment.body.trim();
+    const issue = context.payload.issue;
 
-# Set to true to add assignees to pull requests
-addAssignees: true
+    // Check if the comment contains the /assign command
+    if (commentBody.startsWith('/assign')) {
+      let assignee = context.payload.comment.user.login; // Default to assigning the commenter
 
-# A list of reviewers to be added to pull requests (GitHub user name)
-reviewers: 
-  - reviewerA
-  - reviewerB
-  - reviewerC
+      // Check for specific user mention (e.g., /assign @username)
+      const match = commentBody.match(/\/assign @(\S+)/);
+      if (match) {
+        assignee = match[1];
+      }
 
-# A list of keywords to be skipped the process that add reviewers if pull requests include it 
-skipKeywords:
-  - wip
-
-# A number of reviewers added to the pull request
-# Set 0 to add all the reviewers (default: 0)
-numberOfReviewers: 0
+      // Add the assignee to the issue or pull request
+      try {
+        await context.octokit.issues.addAssignees({
+          owner: context.repo().owner,
+          repo: context.repo().repo,
+          issue_number: issue.number,
+          assignees: [assignee],
+        });
+        context.log.info(`Assigned issue #${issue.number} to ${assignee}`);
+      } catch (error) {
+        context.log.error('Failed to assign:', error);
+      }
+    }
+  });
+};
