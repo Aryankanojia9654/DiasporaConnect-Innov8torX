@@ -43,55 +43,98 @@ The Department of Posts (DoP) covers around 219 countries where a large Indian d
 
 **Solution:**
 
-Our application aims to address these challenges by:
+# Project To-Do List: Connecting Indian Diasporas to Local MSMEs and Artisans
 
-1. **Connecting PIOs with Local Sellers/MSMEs/Artisans:** Facilitating direct interaction and enabling personalized shopping experiences.
-2. **Onboarding Sellers:** Providing a platform for local sellers to showcase their products and reach a wider market.
-3. **Integrating Data:** Utilizing global Indian diaspora data (income, consumption patterns) and AI/ML to identify target populations and personalize recommendations.
-4. **Ensuring Quality and Affordability:** Implementing buyer and seller registration processes to maintain quality standards and offer competitive shipping costs.
+## Seller Panel
+- [ ] **Registration and Authentication**
+  - [ ] Register using DigiLocker for document verification (Aadhar, GST, etc.).
+  - [ ] Implement secure login for sellers.
+- [ ] **Account Management**
+  - [ ] Add account details for direct and reverse transactions (refunds and payouts).
+- [ ] **Product Management**
+  - [ ] Add, edit, delete, and view product listings.
+  - [ ] Set prices, stock levels, and product descriptions.
+  - [ ] Enable bulk product uploads.
+- [ ] **Order Management**
+  - [ ] View and process orders (accepted, shipped, canceled, returned).
+  - [ ] Handle refunds for canceled orders or returns.
+  - [ ] Allow sellers to confirm or reject cancellations/returns.
+- [ ] **Shipping Management**
+  - [ ] Add India Post Tracking IDs for each order.
+  - [ ] Fetch and display shipment status using India Post APIs.
+- [ ] **Analytics**
+  - [ ] Show insights on sales trends, product performance, and revenue.
+  - [ ] Export data as reports (CSV/Excel).
+- [ ] **Notifications**
+  - [ ] Send real-time notifications for new orders, cancellations, or updates.
+- [ ] **Promotions**
+  - [ ] Allow sellers to create discount coupons or promotional offers.
 
-**Organization:** Ministry of Communication, Department of Posts
+---
 
-**Category:** Software, Transportation & Logistics
+## Client Website and App
+- [ ] **Registration and Login**
+  - [ ] Implement user registration and login (email, social media, or phone OTP).
+  - [ ] Allow users to manage profiles and saved addresses.
+- [ ] **Product Browsing**
+  - [ ] Create categories for MSME and artisan products (e.g., handmade, textiles, crafts).
+  - [ ] Add advanced search and filter options (price, category, seller location).
+  - [ ] Provide personalized recommendations based on browsing history.
+- [ ] **Order Placement**
+  - [ ] Enable adding items to cart and secure checkout.
+  - [ ] Integrate secure payment gateways (Razorpay, PayPal, etc.).
+  - [ ] Include currency conversion for international customers.
+- [ ] **Order Management**
+  - [ ] Allow users to view order history and status.
+  - [ ] Provide options to cancel orders before shipment.
+- [ ] **Order Tracking**
+  - [ ] Implement real-time shipment tracking via India Post APIs.
+- [ ] **Wishlist**
+  - [ ] Enable users to save products for future purchases.
+- [ ] **Notifications**
+  - [ ] Send alerts for order updates, discounts, or restocked items.
+- [ ] **Feedback and Reviews**
+  - [ ] Allow users to rate and review purchased products.
+  - [ ] Resolve disputes through customer support.
 
-**Theme:** India Post - A Bridge for Indian Diaspora to access things Indian
+---
 
+## Admin Panel
+- [ ] **User and Seller Management**
+  - [ ] View, edit, and deactivate users or sellers.
+  - [ ] Approve/reject seller registrations post-DigiLocker verification.
+- [ ] **Product and Order Management**
+  - [ ] Monitor all product listings and remove inappropriate ones.
+  - [ ] Manage orders (e.g., refunds or cancellations).
+- [ ] **Shipping Oversight**
+  - [ ] Monitor India Post tracking for delayed or failed shipments.
+- [ ] **Landing Page Management**
+  - [ ] Dynamically update banners, categories, and featured products.
+- [ ] **Insights and Analytics**
+  - [ ] Display key metrics: sales, user activity, refunds, etc.
+  - [ ] Generate and export reports for stakeholders.
+- [ ] **Fraud and Dispute Resolution**
+  - [ ] Automate checks for suspicious activity.
+  - [ ] Resolve disputes between buyers and sellers.
+- [ ] **Admin Roles and Permissions**
+  - [ ] Assign super admin or limited admin roles to team members.
 
-**Key Features:**
+---
 
-* Wide Range of Products
-* Secure Payments
-* Global Delivery
-* Cultural Connection
+## Additional Features
+- [ ] **Localization**
+  - [ ] Implement multi-language support (Hindi, English, etc.).
+- [ ] **Secure Document Storage**
+  - [ ] Encrypt DigiLocker documents for compliance.
+- [ ] **Help and Support**
+  - [ ] Add chatbots or live chat for client and seller queries.
+- [ ] **Custom Marketing Campaigns**
+  - [ ] Enable sellers to purchase ad slots on the platform.
 
+---
 
+## Notes
+- Break these tasks into smaller sprints for the team.
+- Prioritize features to build a minimum viable product (MVP) first.
+- Focus on learning required tech stack (React.js, Node.js, MongoDB, etc.).
 
-**Technologies Used:**
-
-* **Frontend:**
-    * HTML5: Structure and content of web pages
-    * CSS3: Styling and visual presentation 
-    * JavaScript (ES6+): Interactive elements and dynamic functionality
-    * React: Component-based UI library for building user interfaces
-    * Redux: State management for predictable data flow in React applications
-
-* **Backend:**
-    * Node.js: JavaScript runtime environment for server-side development
-    * Express.js: Web application framework for Node.js, simplifying API development and routing
-    
-* **AI/ML:**
-    * PyTorch: Open-source machine learning framework for building and training neural networks
-    * TensorFlow: Another popular open-source machine learning framework 
-
-* **Blockchain:**
-    * SHA256: Hash function for secure data integrity verification
-    * Ethereum: Blockchain platform for decentralized applications and smart contracts
-    * Bitcoin: The first and most widely used cryptocurrency
-
-* **Database:**
-    * SQL: Structured Query Language for managing and interacting with relational databases
-    * Firebase: Backend-as-a-Service platform for real-time databases, authentication, and more
-
-* **Development Tools:**
-    * VS Code: Popular code editor with extensive extensions and support
-    * Linux: Operating system providing a stable and customizable development environment
