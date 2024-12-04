@@ -6,6 +6,16 @@
 
 A platform connecting the Indian diaspora with authentic Rakhis and handicrafts from India.
 
+### TO DO (What to add, in which file and where )
+1. 
+
+### NOTES
+1. MultiLingual website using plugin or otherwise
+2. WorkShop google meet
+3. BHARATGPT multilingual chatbot
+4. Sensitive things guard llm + Check hallucinations
+
+
 **Team Members:**
 
 * Akshay Tiwari (2K22/EC/26)
