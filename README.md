@@ -1,6 +1,6 @@
 # DiasporaConnect - Innov8torX
 
-##**Connect India Post: Diaspora-Connect**
+### **Connect India Post: Diaspora-Connect**
 
 * GitHub Pages Link: [https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/](https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/)
 
