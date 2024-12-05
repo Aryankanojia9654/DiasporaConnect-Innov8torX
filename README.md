@@ -1,6 +1,6 @@
 # DiasporaConnect - Innov8torX
 
-**Connect India Post: Diaspora-Connect**
+##**Connect India Post: Diaspora-Connect**
 
 * GitHub Pages Link: [https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/](https://aryankanojia9654.github.io/DiasporaConnect-Innov8torX/)
 
@@ -9,12 +9,32 @@ A platform connecting the Indian diaspora with authentic Rakhis and handicrafts 
 ### TO DO (What to add, in which file and where )
 1. 
 
-### NOTES
+### NOTES & Features to be added
 1. MultiLingual website using plugin or otherwise
 2. WorkShop google meet
 3. BHARATGPT multilingual chatbot
 4. Sensitive things guard llm + Check hallucinations
+5. Community tab for chat - 3 modes, global, customers, sellers- can also redirect to another website for conversations- store in db
+6. Workshop static page with meet links and random photos
+7. Postage fare calculator from Indian post website
+8. Use dummy website and tracking number for Indian post delivery
+9. 
 
+### Product List 
+1. Rakhi
+2. Sarees
+3. Lehnga?
+4. Kurta/pajama
+5. Diya
+6. Hawan samagri
+7. Sandal/guggul dhoop
+8. Desi cow ghee
+9. Cotton wicks
+10. Hand embroidery 
+11. Mitti ke bartan 
+12. Lakh bangles and other bangles 
+13. Indian regional dresses and footwear 
+14. Handmade sceneries
 
 **Team Members:**
 
