@@ -7,7 +7,7 @@
 A platform connecting the Indian diaspora with authentic Rakhis and handicrafts from India.
 
 ### TO DO (What to add, in which file and where )
-1. - [ ]
+1. - [ ] Add a webpage for Workshops and add its tab on the home screen
 
 ### NOTES & Features to be added
 1. MultiLingual website using plugin or otherwise
