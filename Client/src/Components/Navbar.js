@@ -28,11 +28,9 @@ function Navbar() {
   const searchResultsRef = useRef(null);
 
   const totalLength = OrderItems.reduce((acc, item) => {
-    // if the item is an array, add its length to the accumulator
     if (Array.isArray(item)) {
       return acc + item.length;
     }
-    // otherwise, just add 1 to the accumulator
     return acc + 1;
   }, 0);
 
@@ -137,6 +135,23 @@ function Navbar() {
           </div>
         </div>
         <div className="right-section">
+          <button
+            className="workshop-btn"
+            onClick={() => navigate("/workshop")}
+            style={{
+              backgroundColor: "#e99317",
+              border: "none",
+              borderRadius: "5px",
+              padding: "10px 15px",
+              color: "#fff",
+              cursor: "pointer",
+              marginRight: "15px",
+              fontSize: "14px",
+            }}
+          >
+            Workshop
+          </button>
+
           <img
             onClick={() => {
               if (window.location.href.includes("/payment")) {
@@ -235,7 +250,7 @@ function Navbar() {
             onClick={() => navigate("/account")}
             src={
               user && user.photoURL
-                ? user.photoURL.replace(/^http:\/\//i, "https://") //replaces the http with https
+                ? user.photoURL.replace(/^http:\/\//i, "https://")
                 : Default
             }
             className="default"
