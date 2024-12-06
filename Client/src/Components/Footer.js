@@ -6,12 +6,6 @@ function Footer() {
   return (
     <>
       <div className="footer">
-        <div className="disclaimer-area">
-          <p className="disclaimer-desc">
-            <b>Disclaimer:</b> This Amazon clone project is a mere simulation
-            and is not affiliated with Amazon in any way.
-          </p>
-        </div>
       </div>
       <div className="extra-data">
         <div className="link-section">
@@ -73,13 +67,13 @@ function Footer() {
         <div className="developer">
           <img src={Logo} className="amazon-img" />
           <div className="dev-data">
-            <p>&copy; 2023 | Developed by </p>
+            <p>&copy; 2024 | Developed by </p>
             <a
               className="dev-link"
-              href="https://github.com/shubho0908"
+              href="https://github.com/Aryankanojia9654/DiasporaConnect-Innov8torX"
               target="_blank"
             >
-              Shubhojeet Bera
+              Innov8tor X
             </a>
           </div>
         </div>
