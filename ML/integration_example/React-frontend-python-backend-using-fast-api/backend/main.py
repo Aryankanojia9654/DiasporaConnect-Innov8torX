@@ -7,8 +7,15 @@ import ollama
 from ollama import Client
 
 host = 'https://select-indirectly-jennet.ngrok-free.app'
+
+# set OLLAMA_HOST=https://select-indirectly-jennet.ngrok-free.app
 # host = 'http://localhost:11434'
+
 model = 'llama3.2'
+# model = 'llama3.3'
+
+
+# ollama.pull(model)
 # try:
 #   ollama.chat(model)
 # except ollama.ResponseError as e:
@@ -20,7 +27,31 @@ client = Client(
   host=host#,
 #   headers={'x-some-header': 'some-value'}
 )
+
+def checkRelevance(msg,ai):
+    content = f"""You are an AI who checks if the answer given by the Another AI is Hallucinating with respect to the question asked.
+    Check if the Answer is relevant to the question, if it is relevant return only Yes, if it is not relevant return only No.
+    Also in case the answer is repetetion of the question itself, then answer Yes if it is still relevant.
+    
+    Question : {msg}
+    Answer : {msg}
+    
+    Is the answer relevant to the question? (Yes/No) 
+    """#Also give the reason why or why not?
+    response = client.chat(model=model, messages=[
+    {
+        'role': 'user',
+        'content': content,
+    },
+    ])
+    relevant = f"ChatBot : {response.message.content}"
+    return relevant
+
+
 def answer(msg):
+    question = msg
+    msg = f"""Answer the following question in 10-30 words only, (dont give answers that are duplicate of the question itself, and don't provide an explanation):
+    Question: {msg}"""
     response = client.chat(model=model, messages=[
     {
         'role': 'user',
@@ -28,7 +59,9 @@ def answer(msg):
     },
     ])
     ai = f"ChatBot : {response.message.content}"
-    return ai
+    relevant = checkRelevance(question,ai)
+    # if relevant=="Yes":
+    return relevant+"\n"+ai
 
 # print(response)
 
