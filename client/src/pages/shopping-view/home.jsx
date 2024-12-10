@@ -6,6 +6,9 @@ import { useToast } from "@/components/ui/use-toast";
 import bannerOne from "../../assets/banner-1.webp";
 import bannerTwo from "../../assets/banner-2.webp";
 import bannerThree from "../../assets/banner-3.webp";
+import { Flower, Gift, GiftIcon, Home, Leaf, Paintbrush, Scissors, Star } from 'lucide-react';
+import { FaGifts, FaTshirt, FaPalette, FaLeaf, FaSeedling, FaHands } from 'react-icons/fa';
+
 import {
   Airplay,
   BabyIcon,
@@ -33,20 +36,20 @@ import ChatbotWidget from "@/components/ChatbotWidget";
 import { Card, CardContent } from "@/components/ui/card";
 
 const categoriesWithIcon = [
-  { id: "men", label: "Men", icon: ShirtIcon },
-  { id: "women", label: "Women", icon: CloudLightning },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "festive-essentials", label: "Festive Essentials", icon: FaGifts },
+  { id: "traditional-clothing-accessories", label: "Traditional Clothing", icon: FaTshirt },
+  { id: "handmade-artistic-items", label: "Artistic Items", icon: FaPalette },
+  { id: "eco-friendly-traditional-goods", label: "Traditional Goods", icon: FaLeaf },
+  { id: "handicrafts", label: "Handicrafts", icon: FaHands },
 ];
 
 const brandsWithIcon = [
-  { id: "nike", label: "Nike", icon: Shirt },
-  { id: "adidas", label: "Adidas", icon: WashingMachine },
-  { id: "puma", label: "Puma", icon: ShoppingBasket },
-  { id: "levi", label: "Levi's", icon: Airplay },
-  { id: "zara", label: "Zara", icon: Images },
-  { id: "h&m", label: "H&M", icon: Heater },
+  { id: "Patanjali", label: "Patanjali", icon: Leaf },
+  { id: "Khadi Gram Udyog", label: "Khadi Gram Udyog", icon: Home },
+  { id: "indigifts", label: "Indigifts", icon: GiftIcon },
+  { id: "fabindia", label: "FabIndia", icon: Flower },
+  { id: "artisan-direct", label: "Artisan Direct", icon: Paintbrush },
+  { id: "raymond-ethnix", label: "Raymond Ethnix", icon: Shirt },
 ];
 
 function ShoppingHome() {
@@ -175,32 +178,37 @@ function ShoppingHome() {
               />
             ))
           : null}
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() =>
-            setCurrentSlide(
-              (prevSlide) =>
-                (prevSlide - 1 + featureImageList.length) %
-                featureImageList.length
-            )
-          }
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80"
-        >
-          <ChevronLeftIcon className="w-4 h-4" />
-        </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={() =>
-            setCurrentSlide(
-              (prevSlide) => (prevSlide + 1) % featureImageList.length
-            )
-          }
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80"
-        >
-          <ChevronRightIcon className="w-4 h-4" />
-        </Button>
+        {featureImageList && featureImageList.length > 0 && (
+          <>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() =>
+                setCurrentSlide(
+                  (prevSlide) =>
+                    (prevSlide - 1 + featureImageList.length) %
+                    featureImageList.length
+                )
+              }
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80"
+            >
+              <ChevronLeftIcon className="w-4 h-4" />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() =>
+                setCurrentSlide(
+                  (prevSlide) => (prevSlide + 1) % featureImageList.length
+                )
+              }
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80"
+            >
+              <ChevronRightIcon className="w-4 h-4" />
+            </Button>
+          </>
+        )}
       </div>
 
       {/* Shop by Category */}
@@ -279,6 +287,91 @@ function ShoppingHome() {
 
       {/* Chatbot Widget */}
       <ChatbotWidget />
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-t from-indigo-100 via-white to-white border-t border-gray-200 mt-8">
+        <div className="container mx-auto px-4 py-10 text-center text-gray-700">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm mb-10">
+            <div className="text-left">
+              <h4 className="font-semibold mb-3 text-indigo-900">Quick Links</h4>
+              <ul className="space-y-1">
+                <li>
+                  <a href="/shop/listing" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Shop All Products
+                  </a>
+                </li>
+                <li>
+                  <a href="/auth/login" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="/auth/register" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Signup
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold mb-3 text-indigo-900">Customer Service</h4>
+              <ul className="space-y-1">
+                <li>
+                  <a href="/faq" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="/returns" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Returns
+                  </a>
+                </li>
+                <li>
+                  <a href="/shipping" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Shipping
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold mb-3 text-indigo-900">Categories</h4>
+              <ul className="space-y-1">
+                <li>
+                  <a href="#" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Festive Essentials
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Traditional Clothing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline text-indigo-700 transition-colors hover:text-indigo-900">
+                    Artistic Items
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="text-left">
+              <h4 className="font-semibold mb-3 text-indigo-900">Contact</h4>
+              <p className="leading-relaxed text-sm text-gray-700">
+                123 Marketplace Ave, Shop City, Country
+              </p>
+              <p className="text-sm text-gray-700">Email: info@yourstore.com</p>
+              <p className="text-sm text-gray-700">Phone: +1 (234) 567-890</p>
+            </div>
+          </div>
+
+          <div className="text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} Diaspora-Connect. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
