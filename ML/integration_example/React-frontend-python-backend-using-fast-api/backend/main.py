@@ -65,14 +65,14 @@ def translate_en_tamil(msg,model):
     return translated
 
 def translate_en_telugu(msg,model):
-    msg = f"""Translate "{msg}" into telugu and give answer in telugu. GIVE TRANSLATED ANSWER ONLY."""
+    msg = f"""Translate "{msg}" into telugu and give answer in telugu script. GIVE TRANSLATED ANSWER ONLY."""
     response = client.chat(model=model, messages=[
     {
         'role': 'user',
         'content': msg,
     },
     ])
-    translated = f"ChatBot : {response.message.content}"
+    translated = f"{response.message.content}"
     return translated
 
 def answer_ai(msg,model,model_lang):
@@ -97,7 +97,7 @@ def answer_ai(msg,model,model_lang):
 
 def answer(msg):
     global model_en, model_hi, model_hi2, model_te, model_ta
-    lang="te"
+    lang="jp"
     # model_lang = "en"
     if lang=="en":
         model = model_en
@@ -118,7 +118,7 @@ def answer(msg):
         model = model_te
         model_lang = "TELUGU"
         msg = answer_ai(msg,model_en,"ENGLISH")
-        return "ChatBot :" + translate_en_tamil(msg,model)
+        return "ChatBot :" + translate_en_telugu(msg,model)
     elif lang=="ta":
         model = model_ta
         model_lang = "TAMIL"
