@@ -1,4 +1,3 @@
-// src/components/ChatbotWidget.jsx
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -6,6 +5,7 @@ const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
 
   const toggleChat = () => setIsOpen(!isOpen);
 
@@ -33,12 +33,31 @@ const ChatbotWidget = () => {
         className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg"
         onClick={toggleChat}
       >
-        {isOpen ? "Close Chat" : "Chat with us"}
+        {isOpen ? "X" : "Chat With Us"}
       </button>
 
       {/* Chatbot Window */}
       {isOpen && (
-        <div className="w-80 bg-white shadow-lg rounded-lg p-4 mt-2 border">
+        <div className="w-80 bg-white shadow-lg rounded-lg p-4 mt-2 border relative">
+          {/* Navbar below the Close Chat button */}
+          <div className="flex justify-between items-center mb-2">
+            <span className="font-bold">DiasporaConnect</span>
+            <select
+              value={selectedLanguage}
+              onChange={(e) => setSelectedLanguage(e.target.value)}
+              className="border rounded p-1"
+            >
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Tamil</option>
+              <option>Telugu</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Japanese</option>
+            </select>
+          </div>
+
+          {/* Chat Messages */}
           <div className="overflow-y-auto h-64">
             {messages.map((msg, index) => (
               <div
@@ -51,6 +70,8 @@ const ChatbotWidget = () => {
               </div>
             ))}
           </div>
+
+          {/* Input Field and Send Button */}
           <div className="flex mt-2">
             <input
               type="text"
