@@ -18,14 +18,19 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 //create a database connection -> u can also
 //create a separate file for this and then import/use that file here
 
-const encodedUsername = encodeURIComponent("aryankanojia353");
-const encodedPassword = encodeURIComponent("aryan@123");
-const mongoURI = `mongodb+srv://${encodedUsername}:${encodedPassword}@sih.pzoin.mongodb.net/Ecom?retryWrites=true&w=majority&appName=SIH`;
+// const encodedUsername = encodeURIComponent("aryankanojia353");
+// const encodedPassword = encodeURIComponent("aryan@123");
+// const mongoURI = `mongodb+srv://${encodedUsername}:${encodedPassword}@sih.pzoin.mongodb.net/Ecom?retryWrites=true&w=majority&appName=SIH`;
+
+// mongoose
+//   .connect(mongoURI)
+//   .then(() => console.log("MongoDB connected"))
+//   .catch((error) => console.log(error));
 
 mongoose
-  .connect(mongoURI)
+  .connect('mongodb+srv://algodemon106:Decode..@cluster0.ewjul.mongodb.net/')
   .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
+  .catch((error) => console.log(error)); 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
