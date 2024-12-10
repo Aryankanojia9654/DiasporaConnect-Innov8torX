@@ -53,12 +53,6 @@ function App() {
               {!isAuthenticated && (
                 <div className="button-container flex space-x-4 justify-center mt-4">
                   
-                  <button
-                    onClick={() => window.location.href = '/shop/listing'}
-                    className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
-                  >
-                    Show All Products
-                  </button>
                 </div>
               )}
             </div>
