@@ -2,9 +2,9 @@ import CommonForm from "@/components/common/form";
 import { useToast } from "@/components/ui/use-toast";
 import { registerFormControls } from "@/config";
 import { registerUser } from "@/store/auth-slice";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 const initialState = {
   userName: "",
@@ -18,6 +18,27 @@ function AuthRegister() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  // Redirect to home when the back button is pressed
+  useEffect(() => {
+    window.history.pushState(null, '', window.location.href);
+
+    const handleBackButton = () => {
+      window.location.href = '/';
+    };
+
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, []);
+
+  // Redirect if the user is already authenticated
+  if (isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
 
   function onSubmit(event) {
     event.preventDefault();
