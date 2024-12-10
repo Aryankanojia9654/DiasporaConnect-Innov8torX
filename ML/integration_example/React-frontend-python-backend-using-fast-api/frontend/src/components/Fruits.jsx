@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from "../api.js";
+import ChatBotApi from "../ChatBotApi.js";
 import AddFruitForm from './AddFruitForm';
 
 const FruitList = () => {
@@ -7,7 +7,7 @@ const FruitList = () => {
 
   const fetchFruits = async () => {
     try {
-      const response = await api.get('/fruits');
+      const response = await ChatBotApi.get('/fruits');
       setFruits(response.data.fruits);
     } catch (error) {
       console.error("Error fetching fruits", error);
@@ -16,7 +16,7 @@ const FruitList = () => {
 
   const addFruit = async (fruitName) => {
     try {
-      await api.post('/fruits', { name: fruitName });
+      await ChatBotApi.post('/fruits', { name: fruitName });
       fetchFruits();  // Refresh the list after adding a fruit
     } catch (error) {
       console.error("Error adding fruit", error);
