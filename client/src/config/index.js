@@ -161,23 +161,25 @@ export const brandOptionsMap = {
   "h&m": "H&M",
 };
 
+// src/config.js
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+    { id: "festive-essentials", label: "Festive Essentials" },
+    { id: "traditional-clothing-accessories", label: "Traditional Clothing" },
+    { id: "handmade-artistic-items", label: "Artistic Items" },
+    { id: "eco-friendly-traditional-goods", label: "Traditional Goods" },
+    { id: "handicrafts", label: "Handicrafts" },
   ],
   brand: [
-    { id: "nike", label: "Nike" },
-    { id: "adidas", label: "Adidas" },
-    { id: "puma", label: "Puma" },
-    { id: "levi", label: "Levi's" },
-    { id: "zara", label: "Zara" },
-    { id: "h&m", label: "H&M" },
+    { id: "patanjali", label: "Patanjali" },
+    { id: "khadi-gram-udyog", label: "Khadi Gram Udyog" },
+    { id: "indigifts", label: "Indigifts" },
+    { id: "fabindia", label: "FabIndia" },
+    { id: "artisan-direct", label: "Artisan Direct" },
+    { id: "raymond-ethnix", label: "Raymond Ethnix" },
   ],
 };
+
 
 export const sortOptions = [
   { id: "price-lowtohigh", label: "Price: Low to High" },
