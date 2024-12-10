@@ -15,6 +15,9 @@ model_en = 'llama3.2'
 model_hi = 'SL-Lexicons/llama3-hindi-8b-q5_km.gguf:latest'
 model_te = 'rohithbojja/llama3-telugu:latest'
 model_ta = 'conceptsintamil/tamil-llama-7b-instruct-v0.2:latest'
+model_fr = '7shi/llama-translate:8b-q4_K_M'
+model_jp = '7shi/llama-translate:8b-q4_K_M'
+model_de = 'lukasmalkmus/llama3-sauerkraut'
 # model = 'llama3.3'
 
 
@@ -62,7 +65,7 @@ def translate_en_tamil(msg,model):
     return translated
 
 def translate_en_telugu(msg,model):
-    msg = f"""Translate "{msg}" into tamil and give answer in telugu. GIVE TRANSLATED ANSWER ONLY."""
+    msg = f"""Translate "{msg}" into telugu and give answer in telugu. GIVE TRANSLATED ANSWER ONLY."""
     response = client.chat(model=model, messages=[
     {
         'role': 'user',
@@ -94,7 +97,7 @@ def answer_ai(msg,model,model_lang):
 
 def answer(msg):
     global model_en, model_hi, model_hi2, model_te, model_ta
-    lang="ta"
+    lang="te"
     # model_lang = "en"
     if lang=="en":
         model = model_en
@@ -102,6 +105,15 @@ def answer(msg):
     elif lang=="hi":
         model = model_hi
         model_lang = "HINDI"
+    elif lang=="fr":
+        model = model_fr
+        model_lang = "FRENCH"
+    elif lang=="de":
+        model = model_de
+        model_lang = "GERMAN"
+    elif lang=="jp":
+        model = model_jp
+        model_lang = "JAPANESE"
     elif lang=="te":
         model = model_te
         model_lang = "TELUGU"
@@ -148,6 +160,7 @@ def get_fruits():
 
 @app.post("/fruits")
 def add_fruit(fruit: Fruit):
+    print(fruit)
     fruit.name = str(answer(str(fruit.name)))
     memory_db["fruits"].append(fruit)
     return fruit
