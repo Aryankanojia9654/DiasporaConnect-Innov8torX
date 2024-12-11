@@ -17,7 +17,7 @@ const ChatbotWidget = () => {
     setInput("");
 
     try {
-      const response = await axios.post("http://localhost:8000/chat", { message: input });
+      const response = await axios.post("http://localhost:4173/chat", { message: selectedLanguage, input });
       const botMessage = { sender: "bot", text: response.data.reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {

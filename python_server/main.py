@@ -152,14 +152,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-memory_db = [,]
+memory_db = list()
 
 @app.get("/chats", response_model=str)
 def get_chats():
     return memory_db[-1]#Chats(chats=memory_db["chats"])
 
 @app.post("/chats")
-def add_chat(chat: str):
+def add_chat(chat):
     print(chat)
     chat = str(answer(str(chat)))
     memory_db+=(chat)
