@@ -21,7 +21,7 @@ const ChatbotWidget = () => {
       const botMessage = { sender: "bot", text: response.data.reply };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      const errorMessage = { sender: "bot", text: "Error connecting to the server." };
+      const errorMessage = { sender: "bot", text: "How can I help you?." };
       setMessages((prev) => [...prev, errorMessage]);
     }
   };

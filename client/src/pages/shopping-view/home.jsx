@@ -33,14 +33,26 @@ const scrollingImages = [
   },
   {
     src: "https://i.ibb.co/SPPDS22/Screenshot-2024-12-11-at-6-45-28-PM.png",
-    alt: "Designed by  Md.A.Ansari",
-    overlayText: "Designed by  Md.A.Ansari",
+    alt: "Designed by Md.A.Ansari",
+    overlayText: "Designed by Md.A.Ansari",
   },
   // Add more external images as needed
   {
     src: "https://i.pinimg.com/474x/6e/5a/09/6e5a09e353f28a34a8f03d06cf023ed4.jpg",
     alt: "Designed by Gafar Khatri",
     overlayText: "Designed by Gafar Khatri",
+  },
+
+  {
+    src: "https://i.pinimg.com/736x/6a/7b/87/6a7b87547b94d91e70e41f142db16ea3.jpg",
+    alt: "Designed by Alka Jha",
+    overlayText: "Designed by Alka Jha",
+  },
+
+  {
+    src: "https://i.pinimg.com/736x/87/cc/6a/87cc6a81d27c016b93c0596ad89f2d91.jpg",
+    alt: "Designed by Usha J. Pawar",
+    overlayText: "Designed by Usha J. Pawar",
   },
 ];
 
@@ -274,7 +286,7 @@ function ShoppingHome() {
       </section>
 
       {/* Feature Products with Infinite Scrolling Sidebar */}
-      <section className="py-12">
+      <section className="py-12 flex-grow">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             Featured Products
@@ -295,7 +307,7 @@ function ShoppingHome() {
             </div>
 
             {/* Right side: Infinite scrolling images with overlay text */}
-            <div className="hidden lg:block w-1/4 relative h-[600px] overflow-hidden border border-gray-200 rounded-lg">
+            <div className="hidden lg:block w-1/4 relative overflow-hidden border border-gray-200 rounded-lg">
               <div className="absolute top-0 left-0 w-full h-full animate-scrollImages flex flex-col gap-y-4">
                 {/* Duplicate images to create a seamless loop */}
                 {[...scrollingImages, ...scrollingImages].map((img, idx) => (
@@ -305,11 +317,10 @@ function ShoppingHome() {
                       alt={img.alt}
                       className="w-full h-[250px] object-cover rounded-lg"
                     />
-                    <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 transition-all opacity-0 hover:opacity-100">
+                    <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 transition-opacity opacity-0 hover:opacity-100">
                       {img.overlayText}
                     </div>
-                </div>
-
+                  </div>
                 ))}
               </div>
             </div>
@@ -424,7 +435,7 @@ function ShoppingHome() {
         }
 
         .animate-scrollImages {
-          animation: scrollImages 15s linear infinite; /* Adjust duration as needed */
+          animation: scrollImages 30s linear infinite; /* Increased duration for smoother scrolling */
         }
 
         /* Ensure no gaps disrupt the scroll */
