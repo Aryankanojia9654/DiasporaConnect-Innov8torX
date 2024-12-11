@@ -1,29 +1,13 @@
+// ShoppingHome.jsx
+
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
-import bannerOne from "../../assets/banner-1.webp";
-import bannerTwo from "../../assets/banner-2.webp";
-import bannerThree from "../../assets/banner-3.webp";
-import { Flower, Gift, GiftIcon, Home, Leaf, Paintbrush, Scissors, Star } from 'lucide-react';
-import { FaGifts, FaTshirt, FaPalette, FaLeaf, FaSeedling, FaHands } from 'react-icons/fa';
-
-import {
-  Airplay,
-  BabyIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  CloudLightning,
-  Heater,
-  Images,
-  Shirt,
-  ShirtIcon,
-  ShoppingBasket,
-  UmbrellaIcon,
-  WashingMachine,
-  WatchIcon,
-} from "lucide-react";
+import { Flower, GiftIcon, Home, Leaf, Paintbrush, Shirt } from "lucide-react";
+import { FaGifts, FaTshirt, FaPalette, FaLeaf, FaHands } from "react-icons/fa";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import {
   fetchAllFilteredProducts,
   fetchProductDetails,
@@ -34,6 +18,31 @@ import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import ChatbotWidget from "@/components/ChatbotWidget";
 import { Card, CardContent } from "@/components/ui/card";
+
+// Array of images with overlay texts using external URLs
+const scrollingImages = [
+  {
+    src: "https://i.postimg.cc/cJsvV7Nf/IMG-20241211-WA0098.jpg",
+    alt: "Designed by Gulam Mohammad",
+    overlayText: "Designed by Gulam Mohammad",
+  },
+  {
+    src: "https://i.postimg.cc/HxnVLpnx/IMG-20241211-WA0099.jpg",
+    alt: "Designed by Rajendra Bhagel",
+    overlayText: "Designed by Rajendra Bhagel",
+  },
+  {
+    src: "https://i.ibb.co/SPPDS22/Screenshot-2024-12-11-at-6-45-28-PM.png",
+    alt: "Designed by  Md.A.Ansari",
+    overlayText: "Designed by  Md.A.Ansari",
+  },
+  // Add more external images as needed
+  {
+    src: "https://i.pinimg.com/474x/6e/5a/09/6e5a09e353f28a34a8f03d06cf023ed4.jpg",
+    alt: "Designed by Gafar Khatri",
+    overlayText: "Designed by Gafar Khatri",
+  },
+];
 
 const categoriesWithIcon = [
   { id: "festive-essentials", label: "Festive Essentials", icon: FaGifts },
@@ -102,11 +111,12 @@ function ShoppingHome() {
   }, [productDetails]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % featureImageList.length);
-    }, 15000);
-
-    return () => clearInterval(timer);
+    if (featureImageList && featureImageList.length > 0) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % featureImageList.length);
+      }, 15000);
+      return () => clearInterval(timer);
+    }
   }, [featureImageList]);
 
   useEffect(() => {
@@ -122,7 +132,6 @@ function ShoppingHome() {
     dispatch(getFeatureImages());
   }, [dispatch]);
 
-  // Handler functions for new buttons
   const handleNavigateToCommunity = () => {
     navigate("/community");
   };
@@ -130,6 +139,7 @@ function ShoppingHome() {
   const handleNavigateToWorkshop = () => {
     navigate("/workshop");
   };
+
   const handleNavigateToHeritage = () => {
     navigate("/heritage");
   };
@@ -139,15 +149,12 @@ function ShoppingHome() {
       {/* Navbar */}
       <nav className="bg-white shadow">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo or Brand Name */}
           <div className="text-2xl font-bold text-primary">
             <Button variant="ghost" onClick={() => navigate("/")}>
               MyShop
             </Button>
           </div>
-          {/* Navigation Links */}
           <div className="flex space-x-4">
-            {/* Existing Nav Links can go here */}
             <Button
               variant="ghost"
               onClick={handleNavigateToCommunity}
@@ -162,14 +169,12 @@ function ShoppingHome() {
             >
               Workshop
             </Button>
-            {/* Add more navigation buttons or links as needed */}
-
             <Button
               variant="ghost"
               onClick={handleNavigateToHeritage}
               className="text-gray-700 hover:text-primary"
             >
-              Our-heritage
+              Our Heritage
             </Button>
           </div>
         </div>
@@ -226,7 +231,7 @@ function ShoppingHome() {
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Shop by category
+            Shop by Category
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {categoriesWithIcon.map((categoryItem) => (
@@ -268,23 +273,46 @@ function ShoppingHome() {
         </div>
       </section>
 
-      {/* Feature Products */}
+      {/* Feature Products with Infinite Scrolling Sidebar */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
-            Feature Products
+            Featured Products
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {productList && productList.length > 0
-              ? productList.map((productItem) => (
-                  <ShoppingProductTile
-                    key={productItem.id}
-                    handleGetProductDetails={handleGetProductDetails}
-                    product={productItem}
-                    handleAddtoCart={handleAddtoCart}
-                  />
-                ))
-              : null}
+          <div className="flex gap-6">
+            {/* Left side: Product grid */}
+            <div className="w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {productList && productList.length > 0
+                ? productList.map((productItem) => (
+                    <ShoppingProductTile
+                      key={productItem.id}
+                      handleGetProductDetails={handleGetProductDetails}
+                      product={productItem}
+                      handleAddtoCart={handleAddtoCart}
+                    />
+                  ))
+                : <p className="col-span-full text-center text-gray-500">No products available.</p>}
+            </div>
+
+            {/* Right side: Infinite scrolling images with overlay text */}
+            <div className="hidden lg:block w-1/4 relative h-[600px] overflow-hidden border border-gray-200 rounded-lg">
+              <div className="absolute top-0 left-0 w-full h-full animate-scrollImages flex flex-col gap-y-4">
+                {/* Duplicate images to create a seamless loop */}
+                {[...scrollingImages, ...scrollingImages].map((img, idx) => (
+                  <div key={idx} className="relative flex-shrink-0">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-[250px] object-cover rounded-lg"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-sm px-2 py-1 transition-all opacity-0 hover:opacity-100">
+                      {img.overlayText}
+                    </div>
+                </div>
+
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -383,6 +411,32 @@ function ShoppingHome() {
           </div>
         </div>
       </footer>
+
+      {/* Inline styles for infinite scroll animation */}
+      <style jsx>{`
+        @keyframes scrollImages {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        .animate-scrollImages {
+          animation: scrollImages 15s linear infinite; /* Adjust duration as needed */
+        }
+
+        /* Ensure no gaps disrupt the scroll */
+        .animate-scrollImages > div {
+          flex-shrink: 0;
+        }
+
+        /* Optional: Pause animation on hover */
+        .animate-scrollImages:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 }
