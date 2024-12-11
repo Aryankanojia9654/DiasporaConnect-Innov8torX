@@ -26,6 +26,7 @@
   import GuestHomePage from "./pages/shopping-view/Guesthomepage";
   import Community from "./pages/shopping-view/community"; // Correct import for community.jsx
   import WorkshopPage from "./pages/shopping-view/workshoppage"; // Correct import for workshoppage.jsx
+  import OurHeritage from "./pages/shopping-view/ourheritage";
 
   function App() {
     const { user, isAuthenticated, isLoading } = useSelector(
@@ -110,6 +111,9 @@
 
           {/* Workshop Route (Public) */}
           <Route path="/workshop" element={<WorkshopPage />} />
+
+          {/* heritage Route (Public) */}
+          <Route path="/heritage" element={<OurHeritage/>} />
 
           {/* Unauthorized Page */}
           <Route path="/unauth-page" element={<UnauthPage />} />

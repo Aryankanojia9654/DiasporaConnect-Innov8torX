@@ -130,6 +130,9 @@ function ShoppingHome() {
   const handleNavigateToWorkshop = () => {
     navigate("/workshop");
   };
+  const handleNavigateToHeritage = () => {
+    navigate("/heritage");
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -160,6 +163,14 @@ function ShoppingHome() {
               Workshop
             </Button>
             {/* Add more navigation buttons or links as needed */}
+
+            <Button
+              variant="ghost"
+              onClick={handleNavigateToHeritage}
+              className="text-gray-700 hover:text-primary"
+            >
+              Our-heritage
+            </Button>
           </div>
         </div>
       </nav>
