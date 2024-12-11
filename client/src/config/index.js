@@ -58,11 +58,11 @@ export const addProductFormElements = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "festive-essentials", label: "Festive Essentials" },
+      { id: "traditional-clothing-accessories", label: "Traditional Clothing" },
+      { id: "handmade-artistic-items", label: "Artistic Items" },
+      { id: "eco-friendly-traditional-goods", label: "Traditional Goods" },
+      { id: "handicrafts", label: "Handicrafts" },
     ],
   },
   {
@@ -70,12 +70,12 @@ export const addProductFormElements = [
     name: "brand",
     componentType: "select",
     options: [
-      { id: "nike", label: "Nike" },
-      { id: "adidas", label: "Adidas" },
-      { id: "puma", label: "Puma" },
-      { id: "levi", label: "Levi's" },
-      { id: "zara", label: "Zara" },
-      { id: "h&m", label: "H&M" },
+      { id: "patanjali", label: "Patanjali" },
+    { id: "khadi-gram-udyog", label: "Khadi Gram Udyog" },
+    { id: "indigifts", label: "Indigifts" },
+    { id: "fabindia", label: "FabIndia" },
+    { id: "artisan-direct", label: "Artisan Direct" },
+    { id: "raymond-ethnix", label: "Raymond Ethnix" },
     ],
   },
   {
@@ -113,28 +113,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "festive-essentials",
+    label: "Festive Essentials",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "traditional-clothing-accessories",
+    label: "Traditional Clothing",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "handmade-artistic-items",
+    label: "Artistic Items",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "eco-friendly-traditional-goods",
+    label: "Traditional Goods",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "handicrafts",
+    label: "Handicrafts",
     path: "/shop/listing",
   },
   {
@@ -145,20 +145,20 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  "festive-essentials": "Festive Essentials",
+  "traditional-clothing-accessories": "Traditional Clothing",
+  "handmade-artistic-items": "Artistic Items",
+  "eco-friendly-traditional-goods": "Traditional Goods",
+  "handicrafts": "Handicrafts",
 };
 
 export const brandOptionsMap = {
-  nike: "Nike",
-  adidas: "Adidas",
-  puma: "Puma",
-  levi: "Levi",
-  zara: "Zara",
-  "h&m": "H&M",
+  "patanjali": "Patanjali",
+  "khadi-gram-udyog": "Khadi Gram Udyog",
+  "indigifts": "Indigifts",
+  "fabindia": "FabIndia",
+  "artisan-direct": "Artisan Direct",
+  "raymond-ethnix": "Raymond Ethnix",
 };
 
 // src/config.js
