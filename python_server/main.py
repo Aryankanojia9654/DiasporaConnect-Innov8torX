@@ -97,7 +97,7 @@ def answer_ai(msg,model,model_lang):
 
 def answer(msg):
     global model_en, model_hi, model_te, model_ta
-    lang="de"
+    lang="en"
     # model_lang = "en"
     if lang=="en":
         model = model_en
